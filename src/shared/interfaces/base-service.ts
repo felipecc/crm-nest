@@ -1,7 +1,7 @@
-export interface BaseService<T> {
-  create(createDto: T): Promise<T>;
-  findAll(): Promise<T[]>;
-  findOne(id: number): Promise<T>;
-  update(id: number, updateDto: T): Promise<T>;
-  remove(id: number): Promise<T>;
+export interface BaseService<T, U> {
+  create(createDto: Omit<T, 'id'>): Promise<U>;
+  findAll(): Promise<U[]>;
+  findOne(id: number): Promise<U | null>;
+  update(updateDto: T): Promise<U>;
+  remove(id: number): Promise<Boolean>;
 }

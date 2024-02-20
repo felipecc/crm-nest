@@ -1,0 +1,29 @@
+### List all books
+GET http://localhost:3000/book
+
+
+### Create a new book
+POST http://localhost:3000/book
+content-type: application/json
+
+{
+  "name": "policy of truth 2"
+}
+
+
+### Get a particular book
+GET http://localhost:3000/book/1
+
+
+### Delete a particular book
+DELETE http://localhost:3000/book/1
+
+
+### Update a book
+PATCH http://localhost:3000/book
+content-type: application/json
+
+{
+  "id": 2,
+  "name": "dominio dance"
+}
